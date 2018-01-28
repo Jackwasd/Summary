@@ -104,6 +104,29 @@ drop view productcustomers;	-- delete view productcustomers
 /* 使用存储过程,可结合多条语句，以免出错，已编译，更快*/
 -- 客户端更改分隔符 delimiter // <=> delimiter ;
 
+drop procedure if exists `proc_add`;	--其中`` 而不是 '',要么不加上去，要么就用``
+delimiter ;;
+create definer=`root`@`localhost` procedure `proc_add`(IN a int, IN b int, OUT sum int)
+	begin
+		#Routine body goes here...
+		declare c int;
+		if a is null then set a = 0;
+		end if;
+
+		if b is null then set b = 0;
+		end if;
+
+		set sum = a+b;
+	end;;
+delimiter ;
+-- 测试
+set @b = 5;
+call proc_add(2,@b,@s);
+select @s as sum;
+
+/* 控制过程里面用到的语法见:
+	-> http://blog.csdn.net/horace20/article/details/7056151
+*/
 
 
 
