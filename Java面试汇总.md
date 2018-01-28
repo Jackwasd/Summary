@@ -66,7 +66,7 @@ jdk8的parallelStream的理解
 
 Spring AOP与IOC的实现原理   
 Spring的beanFactory和factoryBean的区别   
-为什么CGlib方式可以对接口实现代理？   
+为什么CGlib方式可以对没有接口的类实现代理？   
 RMI与代理模式   
 Spring的事务隔离级别，实现原理   
 对Spring的理解，非单例注入的原理？它的生命周期？循环注入的原理，aop的实现原理，说说aop中的几个术语，它们是怎么相互工作的？  
